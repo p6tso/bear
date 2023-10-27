@@ -78,11 +78,12 @@ def game():
         for j in range(local_season-1, 4):
             score_data[0] = j + 1
             mp_start(start_loc)
-            location = start_loc.copy()
-            location['M'] = places[moms[score_data[0]]].copy()
-            location['M'][0] -= 1
-            input('>напиши что нибудь для продолжения\n>')
-            mp_start(location)
+            if mother:
+                location = start_loc.copy()
+                location['M'] = places[moms[score_data[0]]].copy()
+                location['M'][0] -= 1
+                input('>напиши что нибудь для продолжения\n>')
+                mp_start(location)
             s = input('>выбери куда направишься\n>')
             if s == 'SAVE':
                 data_save = ''
