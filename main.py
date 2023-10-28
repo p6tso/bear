@@ -156,7 +156,9 @@ if os.path.exists('SAVE.txt'):
         for i in range(len(score_data)):
             score_data[i] = int(loaded[i])
         year = int(loaded[-1])
-        print('Сохранение загружено!')
+        print('>Сохранение загружено!')
+    else:
+        print('>Тогда начнем с нуля!')
 
 
 input('>напиши что нибудь для продолжения\n>')
