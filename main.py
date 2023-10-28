@@ -2,7 +2,7 @@ from random import randint
 import os
 import sys
 score_holder = []
-score_data = [1, 6, 6, 6, 6, 6]
+score_data = [1, 3, 6, 6, 6, 6]
 year = 0
 # 7 14
 mother = 1
@@ -124,12 +124,15 @@ def game():
                 for i in [3, 4, 2]:
                     score_data[i] -= 1
             if score_data[2] + score_data[3] >= 15:
-                score_data[1] = min(score_data[1]+1, 9)
+                score_data[1] = min(score_data[1]+1, 5)
 
             for i in score_data:
                 if i <= 0:
-                    print('YOU LOSE')
-                    sys.exit()
+                    score_data[1] -= 1
+
+            if score_data[1]<=0:
+                print('YOU LOSE')
+                sys.exit()
 
             mp_start(location)
             input('>напиши что нибудь для продолжения\n>')
@@ -144,6 +147,7 @@ START = ['Привет! Это симулятор медведя, ты - мед�
          'Удачи!']
 
 
+os.system('clear')
 for i in START:
     print(i)
 
