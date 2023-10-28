@@ -114,13 +114,13 @@ def game():
                 for i in [2, 4, 5]:
                     score_data[i] -= 1
             elif s == 'p':
-                score_data[4] = min(score_data[4] + 1, 9)
+                score_data[4] = min(score_data[4] + 2, 9)
                 ans = randint(0, 10)
                 if ans > score_data[4] + score_data[5]: score_data[1] -= 1
-                for i in [2, 4, 3]:
+                for i in [2, 3]:
                     score_data[i] -= 1
             else:
-                score_data[5] = min(score_data[5] + 1, 9)
+                score_data[5] = min(score_data[5] + 2, 9)
                 for i in [3, 4, 2]:
                     score_data[i] -= 1
             if score_data[2] + score_data[3] >= 15:
